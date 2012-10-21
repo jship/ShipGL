@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Global</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+    ShipGL
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description">The ShipGL namespace construction.  To avoid polluting the global
+namespace, ShipGL just introduces a single global. (Not surprisingly,
+named ShipGL)</div>
+        
+        
+        
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>Init.js, line 31</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Classes</h3>
+        
+        <dl>
+            <dt><a href="ShipGL.BaseApp.html">BaseApp</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.Buffer.html">Buffer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.BufferUtilities.html">BufferUtilities</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.Camera.html">Camera</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.CubeTexture.html">CubeTexture</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.DirectionalLight.html">DirectionalLight</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.Floor.html">Floor</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.GLResource.html">GLResource</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.Light.html">Light</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.Model.html">Model</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.PointLight.html">PointLight</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.ShaderProgram.html">ShaderProgram</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.SkyBox.html">SkyBox</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ShipGL.Texture.html">Texture</a></dt>
+            <dd></dd>
+        </dl>
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="FileLoader"><span class="type-signature">&lt;static> </span>FileLoader<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        ShipGL.FileLoader can synchronously load both local and HTTP files.
+Function documentation is provided through an example since JSDoc doesn't
+have great support for documenting singleton-like objects.
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>FileLoader.js, line 48</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// Load a local text file named "war_and_peace.txt". Store string.
+var localText = ShipGL.FileLoader.loadLocal("war_and_peace.txt");
+
+// Load a text file from a server named "war_and_peace.txt". Store string.
+var serverText = ShipGL.FileLoader.loadHttp("war_and_peace.txt");
+
+// Load a local JSON model file. Note that JSON's MIME type is passed as
+// well in order to prevent annoying warnings/errors in Firefox.
+var model = ShipGL.FileLoader.loadLocal("godzilla.json", "application/json");
+
+// Try loading a file from a server. If it fails, try loading the file
+// locally.  This is useful if you work on your WebGL code locally and then
+// don't want to make file-related modifications for it to work on a server.
+var data = ShipGL.FileLoader.loadHttp("data.txt") ||
+           ShipGL.FileLoader.loadLocal("data.txt");</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="Math"><span class="type-signature">&lt;static> </span>Math<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        ShipGL.Math provides some helpful math routines. Function documentation
+is provided through an example since JSDoc doesn't have great support for
+documenting singleton-like objects.
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>Math.js, line 65</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// toDegrees(radians)
+var degrees = ShipGL.Math.toDegrees(Math.PI);
+
+// toRadians(degrees)
+var radians = ShipGL.Math.toRadians(180);
+
+// isPowerOf2(x)
+var powerOf2Check = ShipGL.Math.isPowerOf2(1024);
+
+// nextHighestPowerOf2(x)
+var nextPowerOf2 = nextHighestPowerOf2(1000); // nextPowerOf2 == 1024
+
+// makeClamp(min, max) returns a function that will clamp values between
+// min and max.
+var clamp = ShipGL.Math.makeClamp(0, 255);
+var invalidColorValue = 256;
+var validColorValue = clamp(invalidColorValue); // validColorValue == 255
+
+// lerp(val1, val2, amount) linearly interpolates between val1 and val2
+// based on amount.
+var halfway = ShipGL.Math.lerp(0, 100, 0.5); // halfway == 50;
+
+// sphericalToCartesian(theta, phi, r) converts spherical coordinates to
+// Cartesian coordinates. theta and phi specified in degrees!  If r is
+// not specified, it will default to 1.
+var cartesian = ShipGL.Math.sphericalToCartesian(45, 45);
+
+// arbitraryRotation(angle, center, axis, dest), angle in degrees!
+var destMatrix = mat4.create();
+// Create a rotation matrix for a 90 degree rotation about the Y-axis,
+// centered at [1, 2, 3]. Result is written into destMatrix.
+ShipGL.Math.arbitraryRotation(90, [1, 2, 3], [0, 1, 0], destMatrix);</code></pre>
+
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="ShipGL.BaseApp.html">BaseApp</a></li><li><a href="ShipGL.Buffer.html">Buffer</a></li><li><a href="ShipGL.BufferUtilities.html">BufferUtilities</a></li><li><a href="ShipGL.Camera.html">Camera</a></li><li><a href="ShipGL.CubeTexture.html">CubeTexture</a></li><li><a href="ShipGL.DirectionalLight.html">DirectionalLight</a></li><li><a href="ShipGL.Floor.html">Floor</a></li><li><a href="ShipGL.GLResource.html">GLResource</a></li><li><a href="ShipGL.Light.html">Light</a></li><li><a href="ShipGL.Model.html">Model</a></li><li><a href="ShipGL.PointLight.html">PointLight</a></li><li><a href="ShipGL.ShaderProgram.html">ShaderProgram</a></li><li><a href="ShipGL.SkyBox.html">SkyBox</a></li><li><a href="ShipGL.Texture.html">Texture</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ShipGL">ShipGL</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3</a> on Sun Oct 21 2012 00:24:48 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+</body>
+</html>

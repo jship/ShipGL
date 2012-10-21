@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: BufferUtilities</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Class: BufferUtilities</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="global.html#ShipGL">ShipGL</a>.</span>
+    
+    BufferUtilities
+    </h2>
+    
+        <div class="class-description">A ShipGL.BufferUtilities object provides a means to create
+           and initialize a ShipGL.Buffer object in a single line.</div>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <h4 class="name" id="BufferUtilities"><span class="type-signature"></span>new BufferUtilities</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Creates a new ShipGL.BufferUtilities instance.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>gl</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">WebGLRenderingContext</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The rendering context</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>BufferUtilities.js, line 3</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+    
+    
+        <h3 class="subsection-title">Extends</h3>
+        
+        <ul>
+            <li><a href="ShipGL.GLResource.html">ShipGL.GLResource</a></li>
+        </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="createIndexBuffer"><span class="type-signature"></span>createIndexBuffer<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Function that creates and initializes a ShipGL.Buffer
+             index buffer. Just pass in an array and and an optional
+             length. If length is not specified, buffer is initalized
+             to whole array.
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>BufferUtilities.js, line 68</li></ul></dd>
+	
+    
+    
+	
+	
+	<dt class="tag-see">See:</dt>
+	<dd class="tag-see">
+        <ul>
+            <li><a href="ShipGL.Buffer.html">ShipGL.Buffer</a></li>
+        </ul>
+	</dd>
+	
+	
+	
+</dl>
+
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// Assume gl is a valid WebGL context.
+var gl;
+
+// Assume indices is an array containing a bunch of index data.
+var indices = [0, 1, 2, ...];
+
+// Create a ShipGL.BufferUtilities instance.
+var bufferUtils = new ShipGL.BufferUtilities(gl);
+
+// Create a ShipGL.Buffer initialized to contain the contents
+// of the indices array.
+var someIndexBuffer = bufferUtils.createIndexBuffer(indices);
+
+// Create another ShipGL.Buffer initialized to contain the first 9
+// elements in the indices array.
+var anotherIndexBuffer = bufferUtils.createIndexBuffer(indices, 9);</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="createVertexBuffer"><span class="type-signature"></span>createVertexBuffer<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Function that creates and initializes a ShipGL.Buffer
+             vertex buffer. Just pass in an array and and an optional
+             length. If length is not specified, buffer is initalized
+             to whole array.
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>BufferUtilities.js, line 40</li></ul></dd>
+	
+    
+    
+	
+	
+	<dt class="tag-see">See:</dt>
+	<dd class="tag-see">
+        <ul>
+            <li><a href="ShipGL.Buffer.html">ShipGL.Buffer</a></li>
+        </ul>
+	</dd>
+	
+	
+	
+</dl>
+
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// Assume gl is a valid WebGL context.
+var gl;
+
+// Assume positions is an array containing a bunch of vertex positions.
+var positions = [1.0, 2.0, 3.0, ...];
+
+// Create a ShipGL.BufferUtilities instance.
+var bufferUtils = new ShipGL.BufferUtilities(gl);
+
+// Create a ShipGL.Buffer initialized to contain the contents
+// of the positions array.
+var someVertexBuffer = bufferUtils.createVertexBuffer(positions);
+
+// Create another ShipGL.Buffer initialized to contain the first 9
+// elements in the positions array.
+var anotherVertexBuffer = bufferUtils.createVertexBuffer(positions, 9);</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="gl"><span class="type-signature"></span>gl<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The WebGL rendering context
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from"><ul class="dummy"><li>
+		<a href="ShipGL.GLResource.html#gl">ShipGL.GLResource#gl</a>
+	</li></dd>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>Init.js, line 45</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="makeBufferCreator"><span class="type-signature"></span>makeBufferCreator</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Makes a specific buffer creation/initialization function.
+    </div>
+    
+
+    
+    
+    
+        <h5>This:</h5>
+        <ul><li>{ShipGL.BufferUtilities}</li></ul>
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>BufferType</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The buffer's type (ARRAY_BUFFER or
+                           ELEMENT_ARRAY_BUFFER)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>ArrayType</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The buffer's underlying array type (Float32Array,
+                          Uint16Array, etc.)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>BufferUtilities.js, line 113</li></ul></dd>
+	
+    
+    
+	
+	
+	<dt class="tag-see">See:</dt>
+	<dd class="tag-see">
+        <ul>
+            <li><a href="ShipGL.Buffer.html">ShipGL.Buffer</a></li>
+        </ul>
+	</dd>
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    A tailor-made function that can create and initialize ShipGL.Buffer's.
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="ShipGL.BaseApp.html">BaseApp</a></li><li><a href="ShipGL.Buffer.html">Buffer</a></li><li><a href="ShipGL.BufferUtilities.html">BufferUtilities</a></li><li><a href="ShipGL.Camera.html">Camera</a></li><li><a href="ShipGL.CubeTexture.html">CubeTexture</a></li><li><a href="ShipGL.DirectionalLight.html">DirectionalLight</a></li><li><a href="ShipGL.Floor.html">Floor</a></li><li><a href="ShipGL.GLResource.html">GLResource</a></li><li><a href="ShipGL.Light.html">Light</a></li><li><a href="ShipGL.Model.html">Model</a></li><li><a href="ShipGL.PointLight.html">PointLight</a></li><li><a href="ShipGL.ShaderProgram.html">ShaderProgram</a></li><li><a href="ShipGL.SkyBox.html">SkyBox</a></li><li><a href="ShipGL.Texture.html">Texture</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ShipGL">ShipGL</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3</a> on Sun Oct 21 2012 00:24:47 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+</body>
+</html>
