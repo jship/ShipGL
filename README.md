@@ -1,6 +1,10 @@
 ShipGL
 ======
 
+Disclaimers:
+  * I do not own the textures hosted with this repository. They are the property of their creators and will take any of them down immediately if needed.
+  * ShipGL is in its initial version, so there could be some bugs lurking around.
+
 Click [here][wiki_ex1] for an introduction to ShipGL.
 
 Click [here][doc] for API documentation.
