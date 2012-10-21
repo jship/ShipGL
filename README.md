@@ -1,9 +1,9 @@
 ShipGL
 ======
 
-Click [here][doc] for API documentation.
-
 Click [here][ex1] for an introduction to ShipGL.
+
+Click [here][doc] for API documentation.
 
 A WebGL wrapper meant to make it easier for newcomers to get started with graphics programming.
 
