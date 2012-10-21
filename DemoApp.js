@@ -10,6 +10,16 @@ DemoApp = function(canvasId, contextOptions)
     this.camera = null;
     
     this.projMatrix = mat4.create();
+ 
+    this.skyBoxOptions = document.getElementById("skybox_selector");
+    this.skyBoxes = [];
+    this.curSkyBox = null;
+    this.prevSkyBox = null;
+
+    this.floorOptions = document.getElementById("floor_selector");
+    this.floors = [];
+    this.curFloor = null;
+    this.prevFloor = null;
 };
 
 DemoApp.prototype = Object.create(ShipGL.BaseApp.prototype);
@@ -18,11 +28,13 @@ DemoApp.prototype.initialize = function()
 {
     this._initializeModels();
     this._initializeCamera();
+    this._initializeSkyBoxes();
+    this._initializeFloors();
 };
 
 DemoApp.prototype.update = function(elapsed)
 {
-    var changedActiveModel;
+    var changedActiveModel, changedActiveSkyBox, changedActiveFloor;
 
     this.handleHeldKeys(elapsed);
     
@@ -41,12 +53,40 @@ DemoApp.prototype.update = function(elapsed)
     {
         this._initializeCamera();
     }
+    
+    this.prevSkyBox = this.curSkyBox;
+    this.curSkyBox = this.skyBoxes[this.skyBoxOptions.selectedIndex];
+    this.curSkyBox.setCenter(this.camera.position);
+    this.curSkyBox.setProjection(this.projMatrix);
+    this.curSkyBox.setView(this.camera.viewMatrix);
+
+    changedActiveSkyBox = this.prevSkyBox != this.curSkyBox;
+
+    if (changedActiveModel || changedActiveSkyBox)
+    {
+        this.curSkyBox.setWidth(50 * this.curModel.diagonal);
+    }
+
+    this.prevFloor = this.curFloor;
+    this.curFloor = this.floors[this.floorOptions.selectedIndex];
+    this.curFloor.setProjection(this.projMatrix);
+    this.curFloor.setView(this.camera.viewMatrix);
+
+    changedActiveFloor = this.prevFloor != this.curFloor;
+
+    if (changedActiveModel || changedActiveFloor)
+    {
+        this.curFloor.setCenter(this._computeFloorCenter());
+        this.curFloor.setWidth(5 * this.curModel.diagonal);
+    }
 };
 
 DemoApp.prototype.draw = function(elapsed)
 {
     this.gl.clear(this.gl.COLOR_BUFFER_BIT | this.gl.DEPTH_BUFFER_BIT);
 
+    this.curSkyBox.draw();
+    this.curFloor.draw();
     this.curModel.draw(elapsed);
 };
 
@@ -123,6 +163,54 @@ DemoApp.prototype._initializeCamera = function()
     
     this.camera = new ShipGL.Camera(camPos, this.curModel.center, camUp);
     this.camera.setMoveSpeed(camMoveSpeed);
+};
+
+DemoApp.prototype._initializeSkyBoxes = function()
+{
+    this.skyBoxOptions.selectedIndex = 0;
+
+    var i, skyBox;
+    for (i = 0; i < this.skyBoxOptions.length; i++)
+    {
+        skyBox = new ShipGL.SkyBox(this.gl);
+        skyBox.setDirectory(this.skyBoxOptions[i].value, ".jpg");
+        this.skyBoxes.push(skyBox);
+    }
+
+    this.curSkyBox = this.skyBoxes[0];
+    this.prevSkyBox = this.curSkyBox;
+
+    this.curSkyBox.setWidth(50 * this.curModel.diagonal);
+    this.curSkyBox.setCenter(this.camera.position);
+};
+
+DemoApp.prototype._initializeFloors = function()
+{
+    this.floorOptions.selectedIndex = 0;
+
+    var i, floor, floorPos;
+    for (i = 0; i < this.floorOptions.length; i++)
+    {
+        floor = new ShipGL.Floor(this.gl);
+        floor.setTexture(this.floorOptions[i].value);
+        this.floors.push(floor);
+    }
+
+    this.curFloor = this.floors[0];
+    this.prevFloor = this.curFloor;
+    
+    this.curFloor.setWidth(5 * this.curModel.diagonal);
+    this.curFloor.setCenter(this._computeFloorCenter());
+};
+
+DemoApp.prototype._computeFloorCenter = function()
+{
+    var floorPos = [];
+    floorPos[0] = (this.curModel.min[0] + this.curModel.max[0]) / 2;
+    floorPos[1] = this.curModel.min[1];
+    floorPos[2] = (this.curModel.min[2] + this.curModel.max[2]) / 2;
+
+    return floorPos;
 };
 
 function startWebGL()
