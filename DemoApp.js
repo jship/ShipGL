@@ -1,4 +1,4 @@
-ShipGL.DemoApp = function(canvasId, contextOptions)
+DemoApp = function(canvasId, contextOptions)
 {
     ShipGL.BaseApp.call(this, canvasId, contextOptions);
 
@@ -12,15 +12,15 @@ ShipGL.DemoApp = function(canvasId, contextOptions)
     this.projMatrix = mat4.create();
 };
 
-ShipGL.DemoApp.prototype = Object.create(ShipGL.BaseApp.prototype);
+DemoApp.prototype = Object.create(ShipGL.BaseApp.prototype);
 
-ShipGL.DemoApp.prototype.initialize = function()
+DemoApp.prototype.initialize = function()
 {
     this._initializeModels();
     this._initializeCamera();
 };
 
-ShipGL.DemoApp.prototype.update = function(elapsed)
+DemoApp.prototype.update = function(elapsed)
 {
     var changedActiveModel;
 
@@ -43,14 +43,14 @@ ShipGL.DemoApp.prototype.update = function(elapsed)
     }
 };
 
-ShipGL.DemoApp.prototype.draw = function(elapsed)
+DemoApp.prototype.draw = function(elapsed)
 {
     this.gl.clear(this.gl.COLOR_BUFFER_BIT | this.gl.DEPTH_BUFFER_BIT);
 
     this.curModel.draw(elapsed);
 };
 
-ShipGL.DemoApp.prototype.handleHeldKeys = function(elapsed)
+DemoApp.prototype.handleHeldKeys = function(elapsed)
 {
     // 87 is 'w'.
     if (this.heldKeys[87])
@@ -85,7 +85,7 @@ ShipGL.DemoApp.prototype.handleHeldKeys = function(elapsed)
         this.camera.moveDown();
 };
 
-ShipGL.DemoApp.prototype._initializeModels = function()
+DemoApp.prototype._initializeModels = function()
 {
     this.modelOptions.selectedIndex = 0;
 
@@ -100,7 +100,7 @@ ShipGL.DemoApp.prototype._initializeModels = function()
     var i, model;
     for (i = 0; i < this.modelOptions.length; i++)
     {
-        model = new ShipGL.DemoModel(this.gl, this.modelOptions[i].value);
+        model = new DemoModel(this.gl, this.modelOptions[i].value);
         model.initialize(shaderProgram);
         this.models.push(model);
     }
@@ -108,7 +108,7 @@ ShipGL.DemoApp.prototype._initializeModels = function()
     this.curModel = this.models[this.modelOptions.selectedIndex];
 };
 
-ShipGL.DemoApp.prototype._initializeCamera = function()
+DemoApp.prototype._initializeCamera = function()
 {
     var camPos = vec3.create(this.curModel.center);
     var camTranslate = vec3.createFrom(0, 0, 2 * this.curModel.diagonal);
@@ -127,7 +127,7 @@ ShipGL.DemoApp.prototype._initializeCamera = function()
 
 function startWebGL()
 {
-    var app = new ShipGL.DemoApp("glCanvas");
+    var app = new DemoApp("glCanvas");
     app.initialize();
     
     document.onkeydown = function(e) { app.handleKeyPressed(e.keyCode); };

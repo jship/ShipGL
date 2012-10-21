@@ -1,4 +1,4 @@
-ShipGL.DemoModel = function(gl, pathToJSON)
+DemoModel = function(gl, pathToJSON)
 {
     ShipGL.Model.call(this, gl, pathToJSON);
 
@@ -9,16 +9,16 @@ ShipGL.DemoModel = function(gl, pathToJSON)
     this.drawType = this.gl.TRIANGLES;
 };
 
-ShipGL.DemoModel.prototype = Object.create(ShipGL.Model.prototype);
+DemoModel.prototype = Object.create(ShipGL.Model.prototype);
 
-ShipGL.DemoModel.prototype.initialize = function(shaderProgram)
+DemoModel.prototype.initialize = function(shaderProgram)
 {
     ShipGL.Model.prototype.initialize.call(this);
 
     this.program = shaderProgram;
 };
 
-ShipGL.DemoModel.prototype.draw = function(elapsed)
+DemoModel.prototype.draw = function(elapsed)
 {
     this.program.bind();
     this.program.enableAttributeArray("aPosition");
@@ -82,12 +82,12 @@ ShipGL.DemoModel.prototype.draw = function(elapsed)
     this.program.unbind();
 };
 
-ShipGL.DemoModel.prototype.setProjection = function(projMat)
+DemoModel.prototype.setProjection = function(projMat)
 {
     mat4.set(projMat, this.projMat);
 };
 
-ShipGL.DemoModel.prototype.setView = function(viewMat)
+DemoModel.prototype.setView = function(viewMat)
 {
     mat4.set(viewMat, this.viewMat);
 };
