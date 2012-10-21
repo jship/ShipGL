@@ -1,9 +1,11 @@
 ShipGL
 ======
 
-Click [here][ex1] for an introduction to ShipGL.
+Click [here][wiki_ex1] for an introduction to ShipGL.
 
 Click [here][doc] for API documentation.
+
+Click [here][wiki] the wiki home page.
 
 A WebGL wrapper meant to make it easier for newcomers to get started with graphics programming.
 
@@ -17,4 +19,5 @@ What ShipGL does not provide:
 Please check out the wiki for an example or two.
 
 [doc]: http://jship.github.com/ShipGL/doc/index.html "ShipGL Documentation"
-[ex1]: http://github.com/jship/ShipGL/wiki/First-Example:-Rendering-Models "ShipGL: First Example"
+[wiki]: http://github.com/jship/ShipGL/wiki "ShipGL Wiki"
+[wiki_ex1]: http://github.com/jship/ShipGL/wiki/First-Example:-Rendering-Models "ShipGL: First Example"
