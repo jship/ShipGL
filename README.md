@@ -14,5 +14,5 @@ What ShipGL does not provide:
 
 Please check out the wiki for an example or two.
 
-[doc]:  jship.github.com/ShipGL "ShipGL Documentation"
+[doc]:  http://jship.github.com/ShipGL "ShipGL Documentation"
 [wiki]: wiki.com "ShipGL Wiki"
