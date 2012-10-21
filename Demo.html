@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ShipGL Demo</title>
+        <meta charset="utf-8" />
+        <script type="text/javascript" src="ext_libs/gl-matrix-min.js"></script>
+        <script type="text/javascript" src="ext_libs/webgl-utils.js"></script>
+        <script type="text/javascript" src="ShipGL.js"></script>
+        <script type="text/javascript" src="DemoApp.js"></script>
+        <script type="text/javascript" src="DemoModel.js"></script>
+        <style type="text/css">
+            #glCanvas { border: 5px solid indigo; }
+
+            table, td, th
+            {
+                border: 2px solid black;
+                border-collapse: collapse;
+                background-color: white;
+            }
+
+            th { background-color: #CCCCCC; }
+        </style>
+    </head>
+    <body onload="startWebGL();">
+        <div>
+            <h2>ShipGL Demo</h2>
+        </div>
+        <div>
+            <canvas id="glCanvas" width="960" height="540"></canvas>
+        </div>
+        <div>
+            <select id="model_selector">
+                <option value="models/House_of_parliament/models/model.json">House of Parliament</option>
+                <option value="models/stBasil/models/model.json">St. Basil's Cathedral</option>
+                <option value="models/stPeter/models/model.json">St. Peter's Cathedral</option>
+                <option value="models/House/models/model.json">House</option>
+                <option value="models/teapot/models/model.json">Teapot</option>
+                <option value="models/skeleton/models/model.json">Skeleton</option>
+                <option value="models/skull/models/model.json">Skull</option>
+            </select>
+            <br />
+            <br />
+            <table>
+                <tr>
+                    <th colspan="2">Controls</th>
+                </tr>
+                <tr>
+                    <td>W</td>
+                    <td>Move forward</td>
+                </tr>
+                <tr>
+                    <td>S</td>
+                    <td>Move backward</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>Move left</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>Move right</td>
+                </tr>
+                <tr>
+                    <td>K</td>
+                    <td>Move up</td>
+                </tr>
+                <tr>
+                    <td>J</td>
+                    <td>Move down</td>
+                </tr>
+                <tr>
+                    <td>H</td>
+                    <td>Look left</td>
+                </tr>
+                <tr>
+                    <td>L</td>
+                    <td>Look right</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
