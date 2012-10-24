@@ -26,3 +26,4 @@ Please check out the wiki for an example or two.
 [doc]: http://jship.github.com/ShipGL/doc/index.html "ShipGL Documentation"
 [wiki]: http://github.com/jship/ShipGL/wiki "ShipGL Wiki"
 [wiki_ex1]: http://github.com/jship/ShipGL/wiki/First-Example:-Rendering-Models "ShipGL: First Example"
+.
