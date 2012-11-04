@@ -2,7 +2,6 @@
  * @file Contains all ShipGL initialization code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -53,7 +52,6 @@ ShipGL.GLResource = function(gl)
  * @file Contains all ShipGL.FileLoader code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -123,7 +121,6 @@ ShipGL.FileLoader = (function()
  * @file Contains all ShipGL.Math code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -270,7 +267,6 @@ ShipGL.Math = (function()
  * @file Contains all ShipGL.Camera code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -532,7 +528,6 @@ ShipGL.Camera.prototype.lookRight = function()
  * @file Contains all ShipGL.Buffer code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -742,7 +737,6 @@ ShipGL.Buffer.prototype.deallocate = function()
  * @file Contains all ShipGL.BufferUtilities code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -869,7 +863,6 @@ ShipGL.BufferUtilities.prototype.makeBufferCreator = function(BufferType, ArrayT
  * @file Contains all ShipGL.ShaderProgram code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -1587,7 +1580,6 @@ ShipGL.ShaderProgram.prototype.setUniformMat4 = function(unf, val, transpose)
  * @file Contains all ShipGL.Texture code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -1826,7 +1818,6 @@ ShipGL.Texture.prototype.onImageLoad = function()
  * @file Contains all ShipGL.CubeTexture code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -2079,7 +2070,6 @@ ShipGL.CubeTexture.prototype.onImageLoad = function(index)
  * @file Contains all ShipGL.Light code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -2179,7 +2169,6 @@ ShipGL.Light.prototype.stopRotation = function()
  * @file Contains all ShipGL.PointLight code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -2284,7 +2273,6 @@ ShipGL.PointLight.prototype.stopRotation = function()
  * @file Contains all ShipGL.DirectionalLight code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -2392,7 +2380,6 @@ ShipGL.DirectionalLight.prototype.stopRotation = function()
  * @file Contains all ShipGL.Model code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -2753,7 +2740,6 @@ ShipGL.Model.prototype._computeExtents = function()
  * @file Contains all ShipGL.SkyBox code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -3018,7 +3004,6 @@ ShipGL.SkyBox.prototype._computeModelMatrix = function()
  * @file Contains all ShipGL.Floor code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
@@ -3271,7 +3256,6 @@ ShipGL.Floor.prototype._computeModelMatrix = function()
  * @file Contains all ShipGL.BaseApp code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the

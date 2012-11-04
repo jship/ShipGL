@@ -2,7 +2,6 @@
  * @file Contains all ShipGL.SkyBox code.
  * @author Jason Shipman
  *
- * @license
  * Copyright (C) 2012 Jason Shipman
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from the
